@@ -18,6 +18,7 @@ pipeline {
         stage('Build') {
             steps {
                 scmSkip(deleteBuild: true, skipPattern:'.*\\[ci skip\\].*')
+
                 sh 'mvn clean install'
             }
         }
