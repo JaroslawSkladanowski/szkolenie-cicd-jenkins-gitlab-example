@@ -16,9 +16,11 @@ pipeline {
                     }
                 }
         stage('Build') {
+            when {
+                sh (script: "git log -1 | grep '.*\\[ci skip\\].*'", returnStatus: true)
+            }
             steps {
                 sh 'mvn clean install'
-
             }
         }
     }
