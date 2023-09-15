@@ -17,7 +17,7 @@ pipeline {
                 }
         stage('Build') {
             when {
-                equals expected: true, actual: sh (script: "git log -1 | grep '.*\\[ci skip\\].*'", returnStatus: true)
+                equals expected: true, actual: sh (script: "git log -1 | grep '.*\\[ci skip\\].*'")
             }
             steps {
 
