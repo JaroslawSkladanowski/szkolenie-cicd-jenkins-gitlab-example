@@ -4,9 +4,7 @@ pipeline {
         maven 'maven-3'
     }
     agent any
-    triggers {
-        cron('H/2 * * * *')
-    }
+
     stages {
         stage('Clean') {
             steps {
