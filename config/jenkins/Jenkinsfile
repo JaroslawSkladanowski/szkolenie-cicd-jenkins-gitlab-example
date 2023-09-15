@@ -10,11 +10,7 @@ pipeline {
                 cleanWs()
             }
         }
-        stage('Checkout') {
-            steps {
-                git branch: 'master', url: 'https://github.com/jglick/simple-maven-project-with-tests.git'
-            }
-        }
+
         stage('Build') {
             steps {
                 sh 'mvn clean install'
