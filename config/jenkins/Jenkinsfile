@@ -16,11 +16,8 @@ pipeline {
                     }
                 }
         stage('Build') {
-            when {
-                equals expected: true, actual: sh (script: "git log -1 | grep '.*\\[ci skip\\].*'")
-            }
             steps {
-
+                scmSkip(deleteBuild: true, skipPattern:'.*\\[ci skip\\].*')
                 sh 'mvn clean install'
             }
         }
