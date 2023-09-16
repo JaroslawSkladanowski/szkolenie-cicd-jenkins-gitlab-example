@@ -12,6 +12,7 @@ pipeline {
             }
         }
         stage('Checkout') {
+
                     steps {
                         git branch: 'main', url: 'https://github.com/JaroslawSkladanowski/szkolenie-cicd-jenkins-gitlab-example.git'
                     }
